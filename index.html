@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebAssembly Example</title>
+  <script>
+    async function init() {
+      const response = await fetch('path/to/your_wasm_file.wasm');
+      const bytes = await response.arrayBuffer();
+      const { instance } = await WebAssembly.instantiate(bytes);
+
+      // Use the exported functions and memory from the instance
+      // e.g., instance.exports.your_function();
+    }
+
+    init();
+  </script>
+</head>
+<body>
+</body>
+</html>
